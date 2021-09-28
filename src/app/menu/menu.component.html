@@ -1,31 +1,37 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-info sticky-top">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+  <a class="navbar-brand" href="inicio">OceansConnection</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="inicio">Inicio <span class="sr-only">(página atual)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href='entrar'>Entrar</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="cadastrar">Cadastrar</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Categorias
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Ação</a>
+          <a class="dropdown-item" href="#">Outra ação</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Algo mais aqui</a>
+        </div>
+      </li>
     
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
-      <ul class="navbar-nav mr-auto d-flex align-items-center">
-        <li class="nav-item active">
-         <img src="https://github.com/thhalessouza.png" alt="Imagem do User" width="50px" height="50px" class="img-fluid rounded-circle">
-        </li>
-        <li class="nav-item pl-3">
-          <p class="m-0 font-weight-bold text-white fs-16" >Nome do Usuário</p>
-        </li>
-        
-        <li class="nav-item pl-3">
-            <a href="">
-                <p class="text-white fs-16 m-0"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></p>
-            </a>
-          </li>
-        </ul>
-      
-        <ul class="navbar-nav ml-auto d-flex align-items-center">
-            <li class="nav-item pl-3">
-                <a class="m-0 font-weight-bold text-white fs-16">Sair <i class="fa fa-sign-out" aria-hidden="true"></i></a>
-              </li>
-
-        </ul>
-
-    </div>
-  </nav>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+    </form>
+  </div>
+</nav>
