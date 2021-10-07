@@ -11,6 +11,8 @@ import { CategoriaService } from '../service/categoria.service';
 })
 export class CategoriaComponent implements OnInit {
 
+  ativoEstoque: string
+
   categoria: Categoria = new Categoria()
   listaCategorias: Categoria[]
 
@@ -20,16 +22,16 @@ export class CategoriaComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    /*if(environment.token == ''){
+    if(environment.token == ''){
       this.router.navigate(['/entrar'])
-    }*/
+    }
   
 
     this.findAllCategoria()
 }
 
 findAllCategoria(){
-  this.categoriaService.getAllCatetoria().subscribe((resp: Categoria[]) => {
+  this.categoriaService.getAllCategoria().subscribe((resp: Categoria[]) => {
     this.listaCategorias = resp
   })
 }
@@ -41,6 +43,10 @@ cadastrar(){
     this.findAllCategoria()
     this.categoria = new Categoria()
   })
+}
+
+active(event: any){
+  this.ativoEstoque = event.target.value
 }
   
 }

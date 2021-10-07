@@ -11,19 +11,19 @@ export class CategoriaService {
 
   constructor(private http: HttpClient) { }
 
-  /*token = {
+  token = {
     headers: new HttpHeaders().set('Authorization', environment.token)
-  }*/
+  }
 
-getAllCatetoria(): Observable<Categoria[]>{
-  return this.http.get<Categoria[]>('https://connectionoceans.herokuapp.com/categoria')
+getAllCategoria(): Observable<Categoria[]>{
+  return this.http.get<Categoria[]>('https://connectionoceans.herokuapp.com/categoria', this.token)
 }
 
 postCategoria(categoria: Categoria): Observable<Categoria>{
-  return this.http.post<Categoria>('https://connectionoceans.herokuapp.com/categoria', categoria)
+  return this.http.post<Categoria>('https://connectionoceans.herokuapp.com/categoria', categoria, this.token)
 }
 
 getCategoriaById(id: number): Observable<Categoria>{
-  return this.http.get<Categoria>(`https://connectionoceans.herokuapp.com/categoria/${id}`)
+  return this.http.get<Categoria>(`https://connectionoceans.herokuapp.com/categoria/${id}`, this.token)
 }
 }
