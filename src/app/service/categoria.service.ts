@@ -26,4 +26,12 @@ postCategoria(categoria: Categoria): Observable<Categoria>{
 getCategoriaById(id: number): Observable<Categoria>{
   return this.http.get<Categoria>(`https://connectionoceans.herokuapp.com/categoria/${id}`, this.token)
 }
+
+putCategoria(categoria: Categoria): Observable<Categoria>{
+  return this.http.put<Categoria>('https://connectionoceans.herokuapp.com/categoria', categoria, this.token)
+}
+
+deleteCategoria(id: number){
+  return this.http.delete(`https://connectionoceans.herokuapp.com/categoria/${id}`, this.token)
+}
 }

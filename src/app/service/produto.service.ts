@@ -31,4 +31,19 @@ export class ProdutoService {
       return this.http.post<Produto>('https://connectionoceans.herokuapp.com/produto', produto, this.token)
     
   }
+
+    getProdutoById(id: number): Observable<Produto>{
+      return this.http.get<Produto>(`https://connectionoceans.herokuapp.com/produto/${id}`, this.token)
+  }
+
+    putProduto(produto: Produto): Observable<Produto>{
+      return this.http.put<Produto>('https://connectionoceans.herokuapp.com/produto', produto, this.token)
+}
+
+    deleteProduto(id: number){
+      return this.http.delete(`https://connectionoceans.herokuapp.com/produto/${id}`, this.token)
+
+}
+
+
 }

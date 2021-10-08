@@ -28,6 +28,8 @@ export class EntrarComponent implements OnInit {
       environment.foto = this.usuarioLogin.foto
       environment.tipo = this.usuarioLogin.tipo
 
+      console.log(environment)
+
       this.router.navigate(['/inicio']);
        }, erro => {
          if(erro.status == 401) {

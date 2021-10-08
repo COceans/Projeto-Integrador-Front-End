@@ -16,6 +16,10 @@
       <li class="nav-item">
         <a class="nav-link" href="cadastrar">Cadastrar</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="modal" data-target="#novoProduto"
+        href="publicar">Publicar produto</a>
+      </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" routerLink="/categoria" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Categorias
@@ -35,3 +39,53 @@
     </form>
   </div>
 </nav>
+
+<!-- Modal -->
+<div class="modal fade" id="novoProduto" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="TituloModalCentralizado">Novo produto</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+            <label for="nome">Nome</label>
+            <input [(ngModel)]='produto.nome' type="text" class="form-control" id="nome" placeholder="Digite o nome do produto">
+        </div>
+
+        <div class="form-group">
+          <label for="descricao">Descrição</label>
+          <textarea [(ngModel)]='produto.descricao' class="form-control" name="descricao" id="descricao" rows="3"></textarea>
+      </div>
+
+      <div class="form-group">
+          <label for="preco">Preço</label>
+          <input [(ngModel)]='produto.preco' type="number" class="form-control" name="preco" id="preco">
+      </div>
+
+      <div class="form-group">
+        <label for="unidade">Unidades</label>
+        <input [(ngModel)]='produto.unidade' type="number" class="form-control" name="unidade" id="unidade">
+    </div>
+
+    <div class="form-group">
+      <label for="texto">Escolha uma categoria ou <a data-dismiss="modal" routerLink="/categoria">cadastre uma nova</a>:</label>
+      <select class="form-control" name="categoria" id="categoria" [(ngModel)]="idCategoria" (change)="findByIdCategoria()">  
+        <option *ngFor='let item of listaCategoria' value="{{item.id}}">{{item.embalagens}}</option>
+      </select>
+  </div>
+
+      
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-success" (click)='publicar()' 
+        data-dismiss="modal">Publicar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
