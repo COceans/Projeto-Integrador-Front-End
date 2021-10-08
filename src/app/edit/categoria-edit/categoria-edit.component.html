@@ -13,6 +13,18 @@
                 <input type="text" class="form-control" id="embalagens" [(ngModel)]='categoria.embalagens'>
                 </div>
 
+                <div class="form-group">
+                    <input [(ngModel)]='categoria.material' type="text" class="form-control" id="material" placeholder="Insira o material da embalagem">
+                </div>
+
+                <div class="form-group">
+                    <label for="ativo">Estoque</label><br>
+                    <select class="form-control" id="ativo" name="ativo" (change)='active($event)'>
+                        <option value=true>Disponível</option>
+                        <option value=false>Indisponível</option>
+                    </select>
+                </div>
+
                 <div class="d-flex justify-content-center">
                     <button class="btn btn-dark mr-4" routerLink='/categoria'>Cancelar</button>
                     <button class="btn btn-primary" (click)='atualizar()'>Atualizar</button>

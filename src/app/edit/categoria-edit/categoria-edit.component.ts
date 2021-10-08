@@ -3,12 +3,15 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Categoria } from 'src/app/model/Categoria';
 import { CategoriaService } from 'src/app/service/categoria.service';
 
+
 @Component({
   selector: 'app-categoria-edit',
   templateUrl: './categoria-edit.component.html',
   styleUrls: ['./categoria-edit.component.css']
 })
 export class CategoriaEditComponent implements OnInit {
+
+  ativoEstoque: string
 
   categoria : Categoria = new Categoria()
 
@@ -37,6 +40,10 @@ export class CategoriaEditComponent implements OnInit {
       alert('Categoria alterada com sucesso!')
       this.router.navigate(['/categoria'])
     })
+  }
+
+  active(event: any){
+    this.ativoEstoque = event.target.value
   }
 
   

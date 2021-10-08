@@ -15,6 +15,7 @@ import { CategoriaEditComponent } from './edit/categoria-edit/categoria-edit.com
 import { CategoriaDeleteComponent } from './delete/categoria-delete/categoria-delete.component';
 import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component';
 import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.c
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [{provide: LocationStrategy,
+    useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
