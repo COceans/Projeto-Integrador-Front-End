@@ -1,7 +1,9 @@
+import { HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Categoria } from 'src/app/model/Categoria';
 import { CategoriaService } from 'src/app/service/categoria.service';
+import { environment } from 'src/environments/environment.prod';
 
 
 @Component({
@@ -11,7 +13,7 @@ import { CategoriaService } from 'src/app/service/categoria.service';
 })
 export class CategoriaEditComponent implements OnInit {
 
-  ativoEstoque: string
+  ativoEstoque: boolean
 
   categoria : Categoria = new Categoria()
 
@@ -21,7 +23,12 @@ export class CategoriaEditComponent implements OnInit {
     private route: ActivatedRoute
   ) { }
 
+  
+
   ngOnInit() {
+
+  this.categoriaService.refreshToken()
+
 
   let id = this.route.snapshot.params['id']
   this.findByIdCategoria(id)
@@ -34,7 +41,11 @@ export class CategoriaEditComponent implements OnInit {
     })
   }
 
+
   atualizar(){
+
+    this.categoria.ativo = this.ativoEstoque
+
     this.categoriaService.putCategoria(this.categoria).subscribe((resp: Categoria) => {
       this.categoria = resp
       alert('Categoria alterada com sucesso!')
@@ -48,4 +59,7 @@ export class CategoriaEditComponent implements OnInit {
 
   
 }
+
+
+
 

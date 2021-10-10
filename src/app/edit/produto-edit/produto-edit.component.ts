@@ -19,6 +19,9 @@ export class ProdutoEditComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+
+  this.produtoService.refreshToken()
+  
   let id = this.route.snapshot.params['id']
   this.findByIdProduto(id)
   }

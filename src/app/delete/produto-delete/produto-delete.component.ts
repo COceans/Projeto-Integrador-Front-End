@@ -21,8 +21,10 @@ export class ProdutoDeleteComponent implements OnInit {
 
   ngOnInit() {
 
-  let id = this.route.snapshot.params['id']
-  this.findByIdProduto(id)
+  this.produtoService.refreshToken()
+
+  this.idProduto = this.route.snapshot.params['id']
+  this.findByIdProduto(this.idProduto)
   }
 
   findByIdProduto(id: number){

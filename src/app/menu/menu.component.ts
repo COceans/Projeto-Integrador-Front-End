@@ -22,6 +22,7 @@ export class MenuComponent implements OnInit {
   idCategoria: number
   usuario: Usuario = new Usuario
   idUsuario = environment.id
+  idProduto: number
 
   constructor(
     private router: Router,
@@ -32,14 +33,32 @@ export class MenuComponent implements OnInit {
 
   ngOnInit() {
 
+    this.produtoService.refreshToken()
+
+    this.categoriaService.refreshToken()
+
     window.scroll(0,0)
 
     this.findAllCategoria()
+
+    this.getAllProduto()
   }
 
   getAllProduto(){
     this.produtoService.getAllProduto().subscribe((resp: Produto[]) => {
       this.listaProdutos = resp
+    })
+  }
+
+  getAllCategoria(){
+    this.categoriaService.getAllCategoria().subscribe((resp: Categoria[]) => {
+      this.listaCategoria = resp
+    })
+  }
+
+  findByIdProduto(){
+    this.produtoService.getProdutoById(this.idProduto).subscribe((resp: Produto) => {
+      this.produto = resp
     })
   }
 
@@ -56,10 +75,9 @@ export class MenuComponent implements OnInit {
   }
   
   publicar(){
-    this.produtoService.refreshToken()
     this.categoria.id = this.idCategoria;
     this.produto.categoria = this.categoria;
-  
+
   
     this.produtoService.postProduto(this.produto).subscribe((resp: Produto) => {
       this.produto = resp;

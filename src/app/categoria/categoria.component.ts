@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Categoria } from '../model/Categoria';
 import { CategoriaService } from '../service/categoria.service';
+import { ProdutoService } from '../service/produto.service';
 
 @Component({
   selector: 'app-categoria',
@@ -18,13 +19,15 @@ export class CategoriaComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private categoriaService: CategoriaService
+    private categoriaService: CategoriaService,
+    private produtoService: ProdutoService
   ) { }
 
   ngOnInit() {
-    if(environment.token == ''){
-      this.router.navigate(['/entrar'])
-    }
+
+    this.categoriaService.refreshToken()
+
+    this.produtoService.refreshToken()
   
 
     this.findAllCategoria()

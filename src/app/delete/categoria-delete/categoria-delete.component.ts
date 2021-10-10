@@ -22,9 +22,12 @@ export class CategoriaDeleteComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    
 
-  let id = this.route.snapshot.params['id']
-  this.findByIdCategoria(id)
+  this.categoriaService.refreshToken()
+
+  this.idCategoria = this.route.snapshot.params['id']
+  this.findByIdCategoria(this.idCategoria)
   }
   findByIdCategoria(id: number){
     this.categoriaService.getCategoriaById(id).subscribe((resp: Categoria) => {
