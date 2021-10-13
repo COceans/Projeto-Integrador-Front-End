@@ -1,6 +1,40 @@
+<div class="row">
+  <div class="col-md-12 d-flex justify-content-around">
+    <nav class="navbar navbar-light bg-light vw-100">
+      <div class="col-md-2">
+        <a class="navbar-brand ml-5" href="#">
+          <img src="assets/img/LOGOOO.png" alt="foto do usuário" width="100px" height="100px" class="img-fluid rounded-circle">
+        </a>
+      </div>
+      <div class="col-md-8">
+        <form class="d-flex align-items-center justify-content-center my-2 my-lg-0">
+          <input class="form-control mr-sm-2 rounded-pill pesquisa" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+          <a><i class="fa fa-search" aria-hidden="true"></i></a>
+        </form>  
+      </div>
+      <div class="col-md-2">
+        <div class="row justify-content-end">
+          <i class="fa fa-user-o fa-3" aria-hidden="true"></i>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-  <a class="navbar-brand" href="inicio">OceansConnection</a>
+          <i class="fa fa-shopping-cart fa-3" aria-hidden="true"></i>
+
+          <i class="fa fa-question-circle-o fa-3" aria-hidden="true"></i>
+        </div>
+       <p class="icon3">Minha Conta</p>
+
+        
+      </div>
+    </nav>
+  </div>
+</div>
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-info sticky-top">
+  <a class="navbar-brand" href="inicio">
+    OC
+  </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -14,17 +48,17 @@
         <a class="nav-link" href='entrar'>Entrar</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="cadastrar">Cadastrar</a>
+        <a class="nav-link" routerLink="/cadastrar">Cadastrar</a>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" routerLink="/categoria" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Categorias
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Ação</a>
-          <a class="dropdown-item" href="#">Outra ação</a>
+          <a class="dropdown-item" routerLink="/categoria">Atualizar Categorias</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Algo mais aqui</a>
+          <a class="dropdown-item" href="#" *ngFor="let item of listaCategoria">{{item.embalagens}}</a>
+          <div class="dropdown-divider"></div>
         </div>
       </li>
 
@@ -35,15 +69,15 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" data-toggle="modal" data-target="#novoProduto" >Produto</a>
           <a class="dropdown-item" data-toggle="modal" data-target="#editaProduto">Editar produtos</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Algo mais aqui</a>
         </div>
       </li>
     
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+      <input class="form-control mr-sm-2 rounded-pill" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+      <a ><i class="fa fa-search" aria-hidden="true"></i></a>
+
+      
     </form>
   </div>
 </nav>

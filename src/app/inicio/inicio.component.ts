@@ -37,6 +37,7 @@ export class InicioComponent implements OnInit {
   }
 
   this.auth.refreshToken();
+  this.produtoService.refreshToken()
 
   this.getAllProduto()
 
