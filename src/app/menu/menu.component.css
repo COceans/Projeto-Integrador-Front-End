@@ -28,5 +28,20 @@ a
 }
 
 
+.a {
 
+    cursor: pointer;
+}
 
+.iconelink {
+
+    text-decoration: none;
+    color: inherit;
+}
+
+.iconelink:hover {
+
+    text-decoration: none;
+    color: #17a2b8
+
+}
