@@ -1,26 +1,56 @@
-<div class="row">
-  <div class="col-md-12 d-flex justify-content-around">
+<div class="container-fluid">
+<div class="row p-0 m-0">
+  <div class="col-md-12 d-flex justify-content-around p-0">
     <nav class="navbar navbar-light bg-light vw-100">
       <div class="col-md-2">
-        <a class="navbar-brand ml-5" href="#">
-          <img src="assets/img/LOGOOO.png" alt="foto do usuário" width="100px" height="100px" class="img-fluid rounded-circle">
+        <a class="navbar-brand ml-5" href="inicio">
+          <img src="assets/img/logoconnectionoceans.png" alt="foto do logo" width="150px" height="150px" class="img-fluid rounded-circle">
         </a>
       </div>
       <div class="col-md-8">
-        <form class="d-flex align-items-center justify-content-center my-2 my-lg-0">
+        <form class="d-flex align-items-center justify-content-center my-1 my-lg-0">
           <input class="form-control mr-sm-2 rounded-pill pesquisa" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
           <a><i class="fa fa-search" aria-hidden="true"></i></a>
         </form>  
       </div>
       <div class="col-md-2">
-        <div class="row justify-content-end">
-          <i class="fa fa-user-o fa-3" aria-hidden="true"></i>
+        <div class="navbar navbar-expand-lg">
+          <div class="collapse navbar-collapse">
 
-          <i class="fa fa-shopping-cart fa-3" aria-hidden="true"></i>
+          
+          <ul class="navbar-nav d-flex align-items-center justify-content-around"> 
+          <li class="nav-item text-center">
+            <i class="fa fa-user-o fa-3" aria-hidden="true"></i>
+            <p class="icon3 text-center">Minha Conta</p>
 
-          <i class="fa fa-question-circle-o fa-3" aria-hidden="true"></i>
+          </li>
+
+          <li class="nav-item  text-center mx-4">
+            <i class="fa fa-shopping-cart fa-3" aria-hidden="true"></i>
+            <p class="icon3 text-center">Meu Carrinho</p> 
+          </li>
+
+          <li class="nav-item  text-center">
+            <i class="fa fa-question-circle-o fa-3" aria-hidden="true"></i>
+          <p class="icon3 text-center">Quem Somos</p>
+          </li>
+
+          </ul>
         </div>
-       <p class="icon3">Minha Conta</p>
+
+         
+
+           
+         
+
+         
+       
+
+    
+        </div>
+
+
+        
 
         
       </div>
@@ -32,20 +62,16 @@
 
 
 <nav class="navbar navbar-expand-lg navbar-light bg-info sticky-top">
-  <a class="navbar-brand" href="inicio">
-    OC
-  </a>
+  
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="inicio">Inicio <span class="sr-only">(página atual)</span></a>
-      </li>
+      
       <li class="nav-item">
-        <a class="nav-link" href='entrar'>Entrar</a>
+        <a class="nav-link" routerLink="/entrar">Entrar</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="/cadastrar">Cadastrar</a>
@@ -73,12 +99,7 @@
       </li>
     
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2 rounded-pill" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
-      <a ><i class="fa fa-search" aria-hidden="true"></i></a>
-
-      
-    </form>
+    
   </div>
 </nav>
 
@@ -184,5 +205,5 @@
     </div>
   </div>
 </div>
-
+</div>
 
