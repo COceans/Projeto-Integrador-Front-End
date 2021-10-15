@@ -5,6 +5,7 @@ import { Categoria } from '../model/Categoria';
 import { Produto } from '../model/Produto';
 import { Usuario } from '../model/Usuario';
 import { AuthService } from '../service/auth.service';
+import { CategoriaService } from '../service/categoria.service';
 import { ProdutoService } from '../service/produto.service';
 
 @Component({
@@ -15,17 +16,19 @@ import { ProdutoService } from '../service/produto.service';
 export class InicioComponent implements OnInit {
 
   produto: Produto = new Produto
-  listaProdutos: Produto[]
+  listaProdutos: Produto[]  
   categoria: Categoria = new Categoria
   listaCategoria: Categoria[]
   idCategoria: number
   usuario: Usuario = new Usuario
   idUsuario = environment.id
+  idProduto: number
 
   constructor(
     private router: Router,
     private auth: AuthService,
-    private produtoService: ProdutoService
+    private produtoService: ProdutoService,
+    private categoriaService: CategoriaService
   ) { }
 
   ngOnInit() {
@@ -39,6 +42,8 @@ export class InicioComponent implements OnInit {
 
   this.auth.refreshToken();
   this.produtoService.refreshToken()
+  this.categoriaService.refreshToken()
+
 
   this.getAllProduto()
 
@@ -49,6 +54,16 @@ getAllProduto(){
     this.listaProdutos = resp
   })
 }
+
+
+findByIdProduto(){
+  this.produtoService.getProdutoById(this.idProduto).subscribe((resp: Produto) => {
+    this.produto = resp
+
+  })
+
+}
+
 
 publicar(){
   this.categoria.id = this.idCategoria;
