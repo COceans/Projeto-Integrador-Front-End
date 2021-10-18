@@ -19,7 +19,25 @@ a
 .fa-3{
     
     font-size: 19pt;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
    
+
+}
+
+.iconeLink{
+    color: inherit !important;
+    padding-left: 1rem;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right: 0;
+    margin-top: 1rem;
+}
+
+.iconeLink:hover {
+
+    color: #17a2b8 !important
 
 }
 
@@ -27,21 +45,8 @@ a
     font-size: 9pt;
 }
 
-
-.a {
-
-    cursor: pointer;
-}
-
-.iconelink {
-
-    text-decoration: none;
-    color: inherit;
-}
-
-.iconelink:hover {
-
-    text-decoration: none;
-    color: #17a2b8
-
+.categoriaLink {
+    color: inherit !important;
+    
+    
 }

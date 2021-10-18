@@ -52,31 +52,23 @@
   </div>
 
 
-<div class="card-deck mt-5 mx-0 p-0">
-  <div class="card" *ngFor='let item of listaProdutos'>
-    <img class="card-img-top" src="{{item.imagem}}"  alt="Imagem de capa do card">
-    <div class="card-body">
-      <p class="card-text">{{item.id}}</p>
-      <h5 class="card-title">{{item.nome}}</h5>
-      <p class="card-text">{{item.preco}}</p>
-      <p class="card-text">{{item.descricao}}</p>
+<div class="row row-cols-1 row-cols-md-4 mt-5 mx-0 p-0">
+  <div class="col mb-4" *ngFor='let item of listaProdutos'>
+    <div class="card " >
+      <img class="card-img-top" width="100px" height="250px" src="{{item.imagem}}"  alt="Imagem de capa do card">
+      <div class="card-body">
+        <p class="card-text">{{item.id}}</p>
+        <h5 class="card-title">{{item.nome}}</h5>
+        <p class="card-text">R$ {{item.preco}}</p>
+        <p class="card-text">{{item.descricao}}</p>
 
-    </div>
-    <div class="card-footer">
-      <small class="text-muted">{{item.unidade}}</small>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Unidades: {{item.unidade}}</small>
+      </div>
     </div>
   </div>
   
-  <div class="card">
-    <img class="card-img-top" src="https://cdn.shopify.com/s/files/1/0249/0220/5526/products/ecobag_1024x.jpg?v=1594077014" alt="Imagem de capa do card">
-    <div class="card-body">
-      <h5 class="card-title">ECOBAG BESOUROUS</h5>
-      <p class="card-text">Este é um card maior com suporte a texto embaixo, que funciona como uma introdução a um conteúdo adicional. Este conteúdo é um pouco maior, para demonstração.</p>
-    </div>
-    <div class="card-footer">
-      <small class="text-muted">Atualizados 3 minutos atrás</small>
-    </div>
-  </div>
 
 </div>
 
