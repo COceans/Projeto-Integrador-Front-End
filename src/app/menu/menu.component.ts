@@ -50,12 +50,6 @@ export class MenuComponent implements OnInit {
     })
   }
 
-  getAllCategoria(){
-    this.categoriaService.getAllCategoria().subscribe((resp: Categoria[]) => {
-      this.listaCategoria = resp
-    })
-  }
-
   findByIdProduto(){
     this.produtoService.getProdutoById(this.idProduto).subscribe((resp: Produto) => {
       this.produto = resp
