@@ -1,3 +1,8 @@
+@font-face {
+    font-family: Playlist;
+    src: url(../../assets/fonts/Playlist_Script.otf);
+}
+
 .fs-16 
 {
 
@@ -11,6 +16,7 @@ a
     cursor: pointer;
 
 }
+
 
 .pesquisa {
     width: 65% !important;
@@ -43,10 +49,26 @@ a
 
 .icon3 {
     font-size: 9pt;
+    
 }
 
 .categoriaLink {
     color: inherit !important;
     
     
+}
+
+.fonteCategoria{
+    font-family: Playlist, Brush Script MT, Brush Script Std, cursive;
+    font-size: 16pt;
+    font-weight: 300;
+    color: hsl(205, 82%, 89%)!important; 
+}
+
+.planando:hover{
+    border-top: 2px solid #000000!important;
+    border-bottom: 2px solid #000000!important;
+    border-left: 2px solid #000000!important;
+    border-right: 2px solid #000000!important;
+    color:black;
 }
