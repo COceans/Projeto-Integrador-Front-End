@@ -62,13 +62,15 @@ a
     font-family: Playlist, Brush Script MT, Brush Script Std, cursive;
     font-size: 16pt;
     font-weight: 300;
-    color: hsl(205, 82%, 89%)!important; 
+    /* color: hsl(205, 82%, 89%)!important; */ 
 }
 
-.planando:hover{
+/* .planando:hover{
     border-top: 2px solid #000000!important;
     border-bottom: 2px solid #000000!important;
     border-left: 2px solid #000000!important;
     border-right: 2px solid #000000!important;
     color:black;
-}
+} */
+
+

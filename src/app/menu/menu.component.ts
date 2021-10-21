@@ -23,6 +23,7 @@ export class MenuComponent implements OnInit {
   usuario: Usuario = new Usuario
   idUsuario = environment.id
   idProduto: number
+  
 
   constructor(
     private router: Router,
@@ -82,5 +83,7 @@ export class MenuComponent implements OnInit {
 
 
   }
+
+  
 
 }

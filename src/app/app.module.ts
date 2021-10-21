@@ -17,6 +17,9 @@ import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component
 import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +38,9 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    CarouselModule,
+    BrowserAnimationsModule,
   ],
   providers: [{provide: LocationStrategy,
     useClass: HashLocationStrategy}],
