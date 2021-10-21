@@ -1,6 +1,6 @@
 <!-- Carousel de imagens-->
 <div class="container-fluid p-0 m-0">
-<!-- <div class="container-fluid">
+<div class="container-fluid">
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -27,7 +27,7 @@
       <span class="sr-only">Próximo</span>
     </a>
   </div>
-</div> -->
+</div>
 
 <!-- /Carousel de imagens-->
 
@@ -44,13 +44,27 @@
 
 <!-- /Jumbotron-->
 
-<h1>Angular Owl Carousel Integration Tutorial - ItSolutionStuff.com</h1>
+<div class="row my-4 justify-content-center p-0 mx-0">
+  <h1>Promoções da Semana</h1>
+</div>
   
 <owl-carousel-o [options]="customOptions">
   
-<ng-container *ngFor="let slide of slides">
-  <ng-template carouselSlide [2]="slide.id">
-    <img [src]="slide.img" >
+<ng-container *ngFor="let item of listaProdutos">
+  <ng-template carouselSlide [idProduto]="item.id">
+    <div class="card mx-3" >
+      <img class="card-img-top" width="100px" height="250px" src="{{item.imagem}}"  alt="Imagem de capa do card">
+      <div class="card-body">
+        <p class="card-text">{{item.id}}</p>
+        <h5 class="card-title">{{item.nome}}</h5>
+        <p class="card-text">R$ {{item.preco}}</p>
+        <p class="card-text">{{item.descricao}}</p>
+
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Unidades: {{item.unidade}}</small>
+      </div>
+    </div>
   </ng-template>
 </ng-container>
   
@@ -66,7 +80,7 @@
   
 
 
-<div class="row row-cols-1 row-cols-md-4 mt-5 mx-0 p-0">
+<!-- <div class="row row-cols-1 row-cols-md-4 mt-5 mx-0 p-0">
   <div class="col mb-4" *ngFor='let item of listaProdutos'>
     <div class="card " >
       <img class="card-img-top" width="100px" height="250px" src="{{item.imagem}}"  alt="Imagem de capa do card">
@@ -84,12 +98,9 @@
   </div>
   
 
-</div>
+</div> -->
 
-<div class="row mt-5 justify-content-center p-0 mx-0">
-<h1>Promoções da Semana</h1>
 
-</div>
 
 
 </div>
