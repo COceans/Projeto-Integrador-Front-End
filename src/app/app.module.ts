@@ -18,7 +18,9 @@ import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.c
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 import { CarouselModule } from 'ngx-owl-carousel-o';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CompraComponent } from './compra/compra.component';
+import { CarrinhoComponent } from './carrinho/carrinho.component'
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
     CategoriaEditComponent,
     CategoriaDeleteComponent,
     ProdutoEditComponent,
-    ProdutoDeleteComponent
+    ProdutoDeleteComponent,
+    CompraComponent,
+    CarrinhoComponent
   ],
   imports: [
     BrowserModule,
