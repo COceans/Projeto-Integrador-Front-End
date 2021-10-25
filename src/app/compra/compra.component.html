@@ -9,20 +9,29 @@
           </div>
               <div class="col-mb-6">
                 <h5 class="col-mb-6"[(ngModel)]='findByIdProduto'>{{produto.nome}}</h5>
-                <p class="col-mb-6" [(ngModel)]='findByIdProduto'>R$ {{produto.preco}}</p>
+                <p class="col-mb-6" [(ngModel)]='findByIdProduto'>{{produto.preco | currency: "BRL"}}</p>
                 <p class="col-mb-6" [(ngModel)]='findByIdProduto'>{{produto.descricao}}</p>
               <div class="variante">
                 <form class="lista-variantes" data-id="produto.unidade" >
                   <div class="flex add-cart box-stock">
 
-                    <div data-app="produto.unidade" class="box-uni uni">Unidades</div>
-                    <input type="number" value="1">
+                    <div data-app="produto.unidade">Unidades:</div>
+                    <input type="number" value="1" class="unidade"> / {{produto.unidade}}
+                    <div>
+                      <button type="button" class="btn btn-success mt-3" routerLink="/carrinho">Comprar</button>
+                    </div>
                     </div>
                     </form>
                 </div>
               </div>
           </div>
 
+          <h3>Compre também</h3>
+          <div *ngFor="let item of listaProdutos">
+          </div>
+
     </div>
+
+    
 
 

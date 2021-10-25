@@ -12,6 +12,7 @@ export class CompraComponent implements OnInit {
 
   produto: Produto = new Produto();
   idProduto: number;
+  listaProdutos: Produto[]
 
   constructor(
     private router: Router,
@@ -25,6 +26,14 @@ export class CompraComponent implements OnInit {
     let id = this.route.snapshot.params['id']
     this.idProduto = this.route.snapshot.params['id']
     this.findByIdProduto(id)
+
+    this.getAllProduto()
+  }
+
+  getAllProduto(){
+    this.produtoService.getAllProduto().subscribe((resp: Produto[]) => {
+      this.listaProdutos = resp
+    })
   }
 
   findByIdProduto(id: number){
