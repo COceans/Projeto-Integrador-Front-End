@@ -1,0 +1,28 @@
+.cadastro-borda {
+	
+  
+	font-size: 1.15rem;
+	width: 100%;
+	padding: 0.5rem 1rem;
+	border: 2px solid transparent;
+	outline: none;
+	border-radius: 1.5rem;
+	background-color: rgb(255, 255, 255);
+	letter-spacing: 1px;
+	
+	
+	
+	
+}
+
+.bg-imagem {
+
+	background-image: url(https://cdn.mensagenscomamor.com/content/images/m000503766.jpg?v=2&w=1920&h=1280)
+
+}
+
+.border-entrar{
+    border-radius: 50px;
+
+}
+

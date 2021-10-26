@@ -60,10 +60,15 @@ a
 
 .fonteCategoria{
     font-family: Playlist, Brush Script MT, Brush Script Std, cursive;
-    font-size: 16pt;
     font-weight: 300;
-    /* color: hsl(205, 82%, 89%)!important; */ 
 }
+
+.fonteJumbo {
+    font-family: Apple Chancery, cursive;
+    text-decoration: none;
+    
+}
+
 
 /* .planando:hover{
     border-top: 2px solid #000000!important;

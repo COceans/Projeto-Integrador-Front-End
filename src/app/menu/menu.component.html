@@ -51,49 +51,31 @@
   </div>
 </div>
 
-
-
-<nav class="navbar navbar-expand-lg navbar-light bg-info">
-  
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
-    <ul class="navbar-nav mr-auto">
-      
-      
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Categorias
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" routerLink="/categoria">Atualizar Categorias</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#" *ngFor="let item of listaCategoria">{{item.embalagens}}</a>
-          <div class="dropdown-divider"></div>
-        </div>
-      </li>
-
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Produto
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" data-toggle="modal" data-target="#novoProduto" >Produto</a>
-          <a class="dropdown-item" data-toggle="modal" data-target="#editaProduto">Editar produtos</a>
-        </div>
-      </li>
-    
-    </ul>
-    
-  </div>
-</nav> 
+<div *ngIf=" router.url !== ('/entrar')">
+<div *ngIf=" router.url !== ('/cadastrar')">
 
 
 <ul class="nav justify-content-center bg-info p-2">
   <li class="nav-item btn btn-outline-light border-0 p-0" *ngFor='let item of listaCategoria'>
     <a class="nav-link categoriaLink active fonteCategoria" href="#">{{item.embalagens}}</a>
+  </li>
+</ul>
+
+<ul class="nav nav-tabs justify-content-center" style="background-color: hsl(205, 82%, 89%);">
+  <li class="nav-item">
+    <a routerLink="/categoria" class="nav-link py-0 fonteJumbo text-info" role="button" aria-haspopup="true" aria-expanded="false">
+      Categorias
+    </a>
+  </li>
+
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle py-0 fonteJumbo text-info" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Produto
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <a class="dropdown-item fonteJumbo text-info " data-toggle="modal" data-target="#novoProduto" >Produto</a>
+      <a class="dropdown-item fonteJumbo text-info " data-toggle="modal" data-target="#editaProduto">Editar produtos</a>
+    </div>
   </li>
 </ul>
 
@@ -159,22 +141,22 @@
 </div>
 
 
-<div class="modal" id="editaProduto" tabindex="-1">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
+  <div class="modal" id="editaProduto" tabindex="-1">
+   <div class="modal-dialog">
+     <div class="modal-content">
+       <div class="modal-header">
         <h5 class="modal-title">Todos os produtos</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-      </div>
-      <div class="modal-body">
-        <div class="container">
+       </div>
+       <div class="modal-body">
+         <div class="container">
 
           
         
-          <div class="row mt-3 mb-5 d-flex justify-content-center">
-            <div class="col-md-6">
+           <div class="row mt-3 mb-5 d-flex justify-content-center">
+             <div class="col-md-6">
         
                 <table class="table table-hover">
                     <thead>
@@ -197,16 +179,19 @@
                     </tbody>
                   </table>
                   
-           </div>
-         </div>
+            </div>
+          </div>
         
-        </div>
-      </div>
+         </div>
+       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        </div>
       </div>
-    </div>
-  </div>
+     </div>
+   </div>
 </div>
+</div>
+ 
 
 

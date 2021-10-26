@@ -1,0 +1,38 @@
+body{
+    color:#03989E;
+    font-family: Didot, ;
+    font-style: oblique;
+}
+
+.form-control{
+    border-radius: 40px;
+}
+
+.btn {
+    color: #fff;
+    padding: 10px 40px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: 500px;
+    background-color: #03989E;
+    border-radius: 50px;
+    text-align: center;
+  
+}
+
+.div1 {
+    background-image: linear-gradient(135deg, #D1E7F8 0%, #3bc1c5 100%);
+    padding: 30px;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.modal-title{
+    font-size:medium;
+    color: #3bc1c5;
+}
+
+.modal-body{
+    font-size: 16px;
+    color: black;
+}

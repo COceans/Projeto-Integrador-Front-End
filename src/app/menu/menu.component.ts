@@ -26,8 +26,8 @@ export class MenuComponent implements OnInit {
   
 
   constructor(
-    private router: Router,
-    private auth: AuthService,
+    public router: Router,
+    public auth: AuthService,
     private produtoService: ProdutoService,
     private categoriaService: CategoriaService
   ) { }
