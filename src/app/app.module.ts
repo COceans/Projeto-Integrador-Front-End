@@ -20,7 +20,11 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CompraComponent } from './compra/compra.component';
-import { CarrinhoComponent } from './carrinho/carrinho.component'
+import { CarrinhoComponent } from './carrinho/carrinho.component';
+import { ProdutosComponent } from './produtos/produtos.component';
+import { PesquisarComponent } from './pesquisar/pesquisar.component';
+import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
+
 
 @NgModule({
   declarations: [
@@ -36,7 +40,10 @@ import { CarrinhoComponent } from './carrinho/carrinho.component'
     ProdutoEditComponent,
     ProdutoDeleteComponent,
     CompraComponent,
-    CarrinhoComponent
+    CarrinhoComponent,
+    ProdutosComponent,
+    PesquisarComponent,
+    SobreNosComponent,
   ],
   imports: [
     BrowserModule,

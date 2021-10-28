@@ -1,12 +1,16 @@
-.unidade{
-    width: 12%;
-    border-color: rgb(0, 0, 0);
-   
+.planando:hover {
+	border-top: 2px solid #000000!important;
+    border-bottom: 2px solid #000000!important;
+    border-left: 2px solid #000000!important;
+    border-right: 2px solid #000000!important;
+    color:black;
+
 }
 
-.border-entrar{
-    border-radius: 50px;
-
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
 }
 
 .card-price {
@@ -59,21 +63,3 @@
 	left: -9px;
 	top: 17px;
 }
-
-.planando:hover {
-	border-top: 2px solid #000000!important;
-    border-bottom: 2px solid #000000!important;
-    border-left: 2px solid #000000!important;
-    border-right: 2px solid #000000!important;
-    color:black;
-
-}
-
-a {
-	text-decoration: none;
-	color: inherit;
-	cursor: pointer;
-	
-}
-
-

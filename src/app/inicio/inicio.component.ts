@@ -7,6 +7,7 @@ import { Produto } from '../model/Produto';
 import { Usuario } from '../model/Usuario';
 import { AuthService } from '../service/auth.service';
 import { CategoriaService } from '../service/categoria.service';
+import { ListaProdutosService } from '../service/lista-produtos.service';
 import { ProdutoService } from '../service/produto.service';
 
 @Component({
@@ -25,12 +26,16 @@ export class InicioComponent implements OnInit {
   idUsuario = environment.id
   idProduto: number
   title = 'ng-carousel-demo'
+  comprados = this.carrinho.getItens()
+
+  div1: Boolean = false
 
   constructor(
     private router: Router,
     private auth: AuthService,
     private produtoService: ProdutoService,
-    private categoriaService: CategoriaService
+    private categoriaService: CategoriaService,
+    private carrinho: ListaProdutosService
   ) { }
 
   ngOnInit() {
@@ -67,6 +72,8 @@ findByIdProduto(){
 }
 
 
+
+
 publicar(){
   this.categoria.id = this.idCategoria;
   this.produto.categoria = this.categoria;
@@ -80,6 +87,16 @@ publicar(){
     this.produto = new Produto();
     this.getAllProduto();
   });
+}
+
+abrirDiv(){
+  this.div1 = true
+}
+
+comprar(produto: any){
+  this.carrinho.addItem(produto);
+  alert('produto adicionado ao carrinho!')
+  
 }
 
 customOptions: OwlOptions = {

@@ -1,36 +1,77 @@
 <div class="container">
 
-    <div class="container-fluid align-items-center text-lg-center">
-      <div class="row row-col-4 row-cols-md-3 mt-5 mx-0 p-0 d-flex justify-content-center">
-          <div class="col mb-4">
-            <div class="col mb-6">
-              <img class="col mb-4" width="100px" height="250px"  src="{{produto.imagem}}"  alt="Imagem de capa do card">
-            </div>
+  <div class="container-fluid align-items-center text-lg-center">
+    <div class="row row-col-4 row-cols-md-3 mt-5 mx-0 p-0 d-flex justify-content-center">
+        <div class="col mb-4">
+          <div class="col mb-6">
+            <img class="col mb-4" width="100px" height="250px"  src="{{produto.imagem}}"  alt="Imagem de capa do card">
           </div>
-              <div class="col-mb-6">
-                <h5 class="col-mb-6"[(ngModel)]='findByIdProduto'>{{produto.nome}}</h5>
-                <p class="col-mb-6" [(ngModel)]='findByIdProduto'>{{produto.preco | currency: "BRL"}}</p>
-                <p class="col-mb-6" [(ngModel)]='findByIdProduto'>{{produto.descricao}}</p>
-              <div class="variante">
-                <form class="lista-variantes" data-id="produto.unidade" >
-                  <div class="flex add-cart box-stock">
+        </div>
+            <div class="col-mb-6">
+              <h5 class="col-mb-6" [(ngModel)]='findByIdProduto'>{{produto.nome}}</h5>
+              <p class="col-mb-6" [(ngModel)]='findByIdProduto'>{{produto.preco | currency: "BRL"}}</p>
+            <div class="variante">
+              <form class="lista-variantes" data-id="produto.unidade" >
+                <div class="flex add-cart box-stock">
 
-                    <div data-app="produto.unidade">Unidades:</div>
-                    <input type="number" value="1" class="unidade"> / {{produto.unidade}}
-                    <div>
-                      <button type="button" class="btn btn-success mt-3" routerLink="/carrinho">Comprar</button>
-                    </div>
-                    </div>
-                    </form>
-                </div>
+                  <div data-app="produto.unidade">Unidades:</div>
+                  <input type="number" value="1" class="unidade"> / {{produto.unidade}}
+                  
+                  <div>
+                    <button type="button" (click)="comprar(produto)" class="btn btn-success mt-3" routerLink="/carrinho">Comprar</button>
+                  </div>
+                  </div>
+                  </form>
               </div>
-          </div>
+            </div>
+        </div>
+        <hr>
 
-          <h3>Compre também</h3>
-          <div *ngFor="let item of listaProdutos">
-          </div>
+        <div class="row">
 
+          <h3>Descrição:</h3>
+        </div>
+        <div class="row">
+          <p [(ngModel)]='findByIdProduto'>{{produto.descricao}}</p>
+        </div>
+        <hr>
+        
+        <h3> Compre também: 
+          
+          <hr class="mt-4"> 
+        
+        </h3>
+
+        
+        <owl-carousel-o [options]="customOptions">
+        <ng-container *ngFor="let item of listaProdutos">
+          <ng-template carouselSlide [idProduto]="item.id">
+            <a [routerLink]="['/compra', item.id]" target="_self">
+              <div class="card mx-3 planando"  >
+                <img class="card-img-top" width="100px" height="250px" src="{{item.imagem}}"  alt="Imagem de capa do card">
+                <div class="card-body">
+                  <h5 class="card-title">{{item.nome}}</h5>
+                  <p class="card-price">{{item.preco | currency: "BRL"}}</p>
+                  <p class="card-text">{{item.descricao}}</p>
+          
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Unidades: {{item.unidade}}</small>
+                </div>
+                <button type="button" class="btn btn-success mt-3" [routerLink]="['/compra', item.id]">Comprar</button>
+          
+              </div>
+            
+          </a>
+          
+          </ng-template>
+        </ng-container>
+      </owl-carousel-o>
+      </div>
+      
     </div>
+
+    
 
     
 

@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+body{
+    font-family: Didot;
+}
+
+.font-color1{
+    color: #03989E;
+    font-size: 23px;
+    font-weight: 500px;
+    text-align: center;
+    padding: 10px;
+}
+
+.font-color3{
+    color: black;
+    text-align: center;
+}
+
+.btn-nao{
+    background-color: #dc3545;;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 50px;
+    text-align: center;    
+    font-style: bold;
+    color: aliceblue;
+}
+
+.btn-nao:hover{
+    animation: opacity 3s;
+    opacity: 80%;
+}
+
+.btn:hover {
+    animation: opacity 3s;
+    opacity: 50%;
+}
+
+.btn-sim{
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #28a745;
+    border-radius: 50px;
+    text-align: center;    
+    font-style: bold;
+    color: aliceblue;
+}

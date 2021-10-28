@@ -36,7 +36,7 @@ import { UsuarioLogin } from '../model/UsuarioLogin';
     logado(){
       let ok: boolean = false
   
-      if(environment.token != ""){
+      if(environment.tipo == "adm"){
         ok = true
       }
   

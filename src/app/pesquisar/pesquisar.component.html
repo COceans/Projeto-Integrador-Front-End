@@ -1,0 +1,39 @@
+<div class="container-fluid">
+
+<div>
+    <a routerLink="/inicio" class="m-0 font-weight-bold text fs-16 voltar">Voltar
+        <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
+    </a>
+</div>
+
+<div class="container mt-3 mb-5">
+    <div class="row mb-5">
+        <div class="col-md-12">
+            <h1 class="text-center ">Resultados da sua pesquisa: </h1>
+            <h2 class="text-center ">"{{busca}}"</h2>
+        </div>
+    </div>
+
+    
+        <div class="row row-cols-1 row-cols-md-4 mt-5 mx-0 p-0">
+            <div class="col mb-4" *ngFor='let item of listaProdutos'>
+                <a [routerLink]="['/compra', item.id]">
+                    <div class="card mx-3 planando" aria-hidden="true"  >
+                      <img class="card-img-top" width="100px" height="250px" src="{{item.imagem}}"  alt="Imagem de capa do card">
+                      <div class="card-body">
+                        <h5 class="card-title">{{item.nome}}</h5>
+                        <p class="card-price">{{item.preco | currency: "BRL"}}</p>
+                        <p class="card-text">{{item.descricao}}</p>
+                
+                      </div>
+                      <div class="card-footer">
+                        <small class="text-muted">Unidades: {{item.unidade}}</small>
+                      </div>
+                    </div>
+                </a>
+                
+            </div>
+        </div>
+    
+</div>
+</div>

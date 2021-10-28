@@ -1,13 +1,7 @@
-.unidade{
-    width: 12%;
-    border-color: rgb(0, 0, 0);
-   
+.voltar{
+    color: #40c1f0;
 }
 
-.border-entrar{
-    border-radius: 50px;
-
-}
 
 .card-price {
 	display: inline-block;
@@ -75,5 +69,3 @@ a {
 	cursor: pointer;
 	
 }
-
-

@@ -23,7 +23,7 @@ export class MenuComponent implements OnInit {
   usuario: Usuario = new Usuario
   idUsuario = environment.id
   idProduto: number
-  
+  busca: string
 
   constructor(
     public router: Router,
@@ -68,6 +68,8 @@ export class MenuComponent implements OnInit {
       this.listaCategoria = resp
     })
   }
+
+  
   
   publicar(){
     this.categoria.id = this.idCategoria;
@@ -81,8 +83,17 @@ export class MenuComponent implements OnInit {
       this.getAllProduto();
     });
 
+    
+
 
   }
+
+  refresh(){
+    this.router.navigateByUrl('/inicio', { skipLocationChange: true }).then(() =>{
+        this.router.navigate(["/pesquisar",this.busca])
+    })
+}
+
 
   
 

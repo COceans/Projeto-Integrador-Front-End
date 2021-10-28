@@ -45,5 +45,10 @@ export class ProdutoService {
 
 }
 
+    getByNomeProduto(nome: string): Observable<Produto[]>{
+      return this.http.get<Produto[]>(`https://connectionoceans.herokuapp.com/produto/nome/${nome}`, this.token)
+}
+
+
 
 }

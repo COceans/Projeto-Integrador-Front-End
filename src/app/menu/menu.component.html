@@ -5,16 +5,19 @@
       <div class="row">
       <div class="col-md-12 pr-0 pl-2">
         <a class="navbar-brand mx-0" href="inicio">
-          <img src="../../assets/img/logoconnectionoceans-removebg-preview.png" alt="foto do logo"  width="100" height="86">
-          <img src="../../assets/img/nome_logo-removebg-preview.png" alt="nome personalizado do site"  width="180" height="86">
+          <img src="../../assets/img/logoconnectionoceans-removebg-preview.png" routerLink="/inicio" alt="foto do logo"  width="100" height="86">
+          <img src="../../assets/img/nome_logo-removebg-preview.png" routerLink="/inicio" alt="nome personalizado do site"  width="180" height="86">
         </a>
         
       </div>
     </div>
       <div class="col-md-5">
         <form class="d-flex align-items-center justify-content-center my-1 my-lg-0">
-          <input class="form-control flex-fill mr-sm-2 rounded-pill pesquisa" type="search" placeholder="O que você procura hoje?" aria-label="Pesquisar">
-          <a><i class="fa fa-search" aria-hidden="true"></i></a>
+          <input [(ngModel)]="busca" name="busca" class="form-control flex-fill mr-sm-2 rounded-pill pesquisa" type="search" placeholder="O que você procura hoje?" aria-label="Pesquisar">
+          <button (click)="refresh()" class="btn btn-outline-info my-2 my-sm-0" type="submit"><i class="fa fa-search"
+            aria-hidden="true"></i>
+            </button>
+
         </form>  
       </div>
       <div class="row ">
@@ -33,7 +36,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link iconeLink icon3" href="#">
+            <a class="nav-link iconeLink icon3" routerLink="/sobre-nos">
               <i class="fa fa-question-circle-o fa-3" aria-hidden="true"></i>
               <p class="text-center">Sobre Nós</p> 
             </a>
@@ -55,13 +58,13 @@
 <div *ngIf=" router.url !== ('/cadastrar')">
 
 
-<ul class="nav justify-content-center bg-info p-2">
+<ul class="nav justify-content-center bg-info p-1">
   <li class="nav-item btn btn-outline-light border-0 p-0" *ngFor='let item of listaCategoria'>
-    <a class="nav-link categoriaLink active fonteCategoria" href="#">{{item.embalagens}}</a>
+    <a class="nav-link categoriaLink active fonteCategoria" [routerLink]="['/produtos', item.id]" >{{item.embalagens}}</a>
   </li>
 </ul>
 
-<ul class="nav nav-tabs justify-content-center" style="background-color: hsl(205, 82%, 89%);">
+<ul *ngIf="auth.logado()" class="nav nav-tabs justify-content-center" style="background-color: hsl(205, 82%, 89%);">
   <li class="nav-item">
     <a routerLink="/categoria" class="nav-link py-0 fonteJumbo text-info" role="button" aria-haspopup="true" aria-expanded="false">
       Categorias
@@ -156,7 +159,7 @@
           
         
            <div class="row mt-3 mb-5 d-flex justify-content-center">
-             <div class="col-md-6">
+             <div class="col-md-12">
         
                 <table class="table table-hover">
                     <thead>

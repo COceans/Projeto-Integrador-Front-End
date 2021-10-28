@@ -1,0 +1,30 @@
+.fonte{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+}
+
+.form{
+
+    max-width: 20%;
+    max-height: 20%;
+}
+
+.fa{
+    
+    padding: 25px;
+
+}
+
+.fa.fa-github{
+    color: black;
+    font-size: 200%;
+}
+
+.fa.fa-linkedin{
+    font-size: 200%;
+}
+
+.fa-github:hover{
+    color:black;
+    
+}
